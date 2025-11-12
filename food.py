@@ -15,3 +15,11 @@
 #Your entered foods are:
 #[pizza, beef jerkey, rice triangles, steamed chinese bun, fried chicken] 
 #You entered a total of 62 characters
+
+foods = ["pizza", "beef jerkey", "rice triangles", "steamed chinese bun", "fried chicken"]
+
+print("\fYour entered foods are:")
+print(f"[{', '.join(foods)}]")
+
+total_characters = sum(len(food) for food in foods)
+print(f"You entered a total of {total_characters} characters")
