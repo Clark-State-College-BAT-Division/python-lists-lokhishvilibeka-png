@@ -22,31 +22,16 @@
 player_one = [4, 9, 1, 6, 3, 7, 2, 8, 5, 2]
 player_two = [5, 3, 7, 2, 6, 4, 9, 1, 8, 3]
 
-player_one_wins = 0
-player_two_wins = 0
-
-for i in range(10):
-    if player_one[i] > player_two[i]:
-        player_one_wins += 1
-    elif player_two[i] > player_one[i]:
-        player_two_wins += 1
-
-player_one_high = max(player_one)
-player_two_high = max(player_two)
-player_one_low = min(player_one)
-player_two_low = min(player_two)
-
-player_one_high_index = player_one.index(player_one_high)
-player_two_high_index = player_two.index(player_two_high)
-player_one_low_index = player_one.index(player_one_low)
-player_two_low_index = player_two.index(player_two_low)
+player_one_wins = sum(1 for i in range(10) if player_one[i] > player_two[i])
+player_two_wins = sum(1 for i in range(10) if player_two[i] > player_one[i])
 
 print("Player One =", player_one)
 print("Player Two =", player_two)
 print("Player One won", player_one_wins, "times")
 print("Player Two won", player_two_wins, "times")
-print("Player One's highest number is", player_one_high, "at index", player_one_high_index)
-print("Player Two's highest number is", player_two_high, "at index", player_two_high_index)
-print("Player One's lowest number is", player_one_low, "at index", player_one_low_index)
-print("Player Two's lowest number is", player_two_low, "at index", player_two_low_index)
+print("Player One's highest number is", max(player_one), "at index", player_one.index(max(player_one)))
+print("Player Two's highest number is", max(player_two), "at index", player_two.index(max(player_two)))
+print("Player One's lowest number is", min(player_one), "at index", player_one.index(min(player_one)))
+print("Player Two's lowest number is", min(player_two), "at index", player_two.index(min(player_two)))
+
 
